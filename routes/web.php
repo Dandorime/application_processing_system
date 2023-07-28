@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () { return view('welcome'); })->name('feedback');
+
+Route::post('/send',[\App\Http\Controllers\MessageController::class, 'store']);
+
+Route::get('/success',function(){ return view('success'); })->name('success');
+
+Route::post('/save/{id}',[\App\Http\Controllers\MessageController::class, 'update'])->name('save');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/',function() { return view('auth.login'); });
+
+    Route::get('/bar',[\App\Http\Controllers\MessageController::class, 'index'])->name('admins');
 });
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'login'])->name('home');
