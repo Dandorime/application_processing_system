@@ -1,9 +1,6 @@
 <html>
-
-<body>
-
-    <div >Здравствуйте,{{$comment['name']}}!</div>
-    <div >{{$comment['comment']}}</div>
-</body>
-
+    <body>
+        <div >Здравствуйте,{{$comment['name']}}!</div>
+        <div >{{$comment['comment']}}</div>
+    </body>
 </html>

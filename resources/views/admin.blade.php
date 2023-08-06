@@ -26,13 +26,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('login')}}">Admin</a>
                     </li>
+                </ul>
             </div>
         </div>
     </nav>
     <div class="col-lg-16">
-
         @if (count($messages))
-
             <table class="table">
                 <thead>
                 <tr>
@@ -49,8 +48,6 @@
                 </thead>
                 <tbody>
                 @foreach ($messages as $message)
-
-
                     <form action="{{route ('save', $message->id)}}" method="post">
                         @csrf
                         <tr>
@@ -72,18 +69,13 @@
                             <td>{{$message->created_at}}</td>
                             <td>{{$message->updated_at}}</td>
                             <td >
-
-                                <button  type="submit" class="btn btn-dark">Ответить</button>
-
+                                <button type="submit" class="btn btn-dark">Ответить</button>
                             </td>
-
                         </tr>
                     </form>
                 @endforeach
                 </tbody>
-
         @endif
-
     </div>
 </div>
 </body>

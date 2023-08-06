@@ -3,9 +3,9 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Mail;
 
 class OrderShipped extends Mailable
 {
@@ -29,7 +29,6 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-//        $address = 'ignore@example.com';
         $your_name = 'Ignore Me';
         $subject = 'Hello';
 
